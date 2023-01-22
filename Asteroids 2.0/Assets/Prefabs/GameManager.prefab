@@ -1,0 +1,379 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2777885493155707092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2777885493155707094}
+  - component: {fileID: 2777885493155707093}
+  - component: {fileID: 2777885493155707095}
+  - component: {fileID: 2777885493155707088}
+  - component: {fileID: 2923707448615784375}
+  - component: {fileID: 1388773206}
+  - component: {fileID: 2777885491598982038}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2777885493155707094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2777885493155707092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2777885493155707093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2777885493155707092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdaacdab3c565794f80abf6bf3db5ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteFlashMat: {fileID: 2100000, guid: bb6533fecb8164e439aea642eb45b37a, type: 2}
+--- !u!114 &2777885493155707095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2777885493155707092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51bae52b46a5ec44afb4443e27dd390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minTimeBetweenNewAsteroid: 0.5
+  maxTimeBetweenNewAsteroid: 2
+  runTimer: 0
+  debrisOnly: 0
+--- !u!114 &2777885493155707088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2777885493155707092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e7039b98a11bd45885794b12281051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: cruiser
+    prefab: {fileID: 492846079113896096, guid: 46472b201d3026c4d98c73261ee2059c, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: screecher
+    prefab: {fileID: 6805984188772496663, guid: 1df8207947b22c1498d8faf24ae3947d, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: hunter
+    prefab: {fileID: 8914662548430733745, guid: 72f3626969f7f8b4bae370336351f1c6, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: playerMissile
+    prefab: {fileID: 4848524163009628540, guid: ca5c7f2cf6905a342a312d23769a885e, type: 3}
+    size: 5
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: alienSeekerMissile
+    prefab: {fileID: 2368444472894537853, guid: 93025e7e44484794a9308a80018fb622, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: alienBasicMissile
+    prefab: {fileID: 82128371032476647, guid: 2c0c62cc45a6dbe41ad5e6646ac4a7ad, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: explosion_01
+    prefab: {fileID: 4059943820706231411, guid: 3b95bfca519fb0e45bc2b3824fe9cff5, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: explosion_02
+    prefab: {fileID: 4422234277379563659, guid: e7e6b84cc29743f4ca70431a53570195, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: asteroidSmall_01
+    prefab: {fileID: 3482159055861845395, guid: 699dfb9524d5b8141a376fd8e7d2e378, type: 3}
+    size: 5
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: asteroidSmall_02
+    prefab: {fileID: 3228535113677926770, guid: 3000250a55398d64b9d2434b7e065ce4, type: 3}
+    size: 5
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: asteroidSmall_03
+    prefab: {fileID: 7063122326736180265, guid: bea07930d7895b14393520ba20032cec, type: 3}
+    size: 5
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: asteroidSmall_04
+    prefab: {fileID: 5685429768107494874, guid: b4497df889cf6c848800bf26ee8fda6d, type: 3}
+    size: 5
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: asteroidMed_01
+    prefab: {fileID: 953836542338157703, guid: 600f2c1e5fe3dec4b94cc6a5825c39ab, type: 3}
+    size: 5
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: asteroidMed_02
+    prefab: {fileID: 1326593878657308093, guid: a2e97afc1afb2c141b8cab8bdab22618, type: 3}
+    size: 5
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: asteroidMed_03
+    prefab: {fileID: 5719642281748753678, guid: cd446b8de8bfcb0429ea54cbf173f464, type: 3}
+    size: 5
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: asteroidMed_04
+    prefab: {fileID: 1129018141842759272, guid: 1b681ec294490ca4a89b3f6f976ac323, type: 3}
+    size: 5
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: asteroidLarge_01
+    prefab: {fileID: 7401453326566715141, guid: 12137b798bd7589419fef0b38e12d330, type: 3}
+    size: 5
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: asteroidLarge_02
+    prefab: {fileID: 8056004995562209014, guid: d46c78f4f434d544980ce3d3d6af6803, type: 3}
+    size: 5
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: asteroidLarge_03
+    prefab: {fileID: 5542865019833018468, guid: 2cdcb9252536cb149ae41495a896f994, type: 3}
+    size: 5
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: asteroidLarge_04
+    prefab: {fileID: 5955662661603193451, guid: 0d99b9f0dc49e1b48a41434275d361a7, type: 3}
+    size: 5
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: planet_01
+    prefab: {fileID: 6679646066888975288, guid: 3f3bbff759887304ab60dc7a5a56a7e9, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: planet_02
+    prefab: {fileID: 2742780673193564417, guid: 868968d547466024a87ada82f3ae7285, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: planet_03
+    prefab: {fileID: 8130192774707641354, guid: 08cdf27758e2cf64d90e83dbb3817649, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: planet_04
+    prefab: {fileID: 5178215310928365127, guid: f9fc842a37ff9d344967e53dbfe1a4e6, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: sat_01
+    prefab: {fileID: 6932914728524753648, guid: 7fdd7e3244bb0b344a143c8c3f2243ed, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: sat_02
+    prefab: {fileID: 7463581792986596377, guid: ed2866caba51dab49a893bb861a15330, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+  - tag: rocket
+    prefab: {fileID: 8060533718262560687, guid: a59150170ebdc924895c6cec7e913618, type: 3}
+    size: 1
+    expandable: 1
+    freeList: []
+    usedList: []
+--- !u!114 &2923707448615784375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2777885493155707092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb581211f5b15540b8c6c60a2a6c634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: d745db27865d7f64f94aa5cfb12fb904, type: 3}
+  - {fileID: 8300000, guid: 7f07487475ca4ff4a9c8adcefbcd7cac, type: 3}
+  - {fileID: 8300000, guid: 562c7945d9dd38844998786e3bd57263, type: 3}
+  - {fileID: 8300000, guid: 8e94e11d408afc84abab7ef738cee60c, type: 3}
+  - {fileID: 8300000, guid: c4d33a5e4cc15f84f94dfd0a74af183e, type: 3}
+  - {fileID: 8300000, guid: e05620564e9304d4e97a2e58633e2d46, type: 3}
+  - {fileID: 8300000, guid: def6ecf73bcf1914b9147bd7f75faf8b, type: 3}
+  - {fileID: 8300000, guid: 46073fa8b2a56fb4085c60f6b9e2ec03, type: 3}
+  - {fileID: 8300000, guid: 4d7a267295fa0db49a7fe0ba196f9597, type: 3}
+  - {fileID: 8300000, guid: 3bc55fcfec946644d8b508a2d1c7e6d3, type: 3}
+  - {fileID: 8300000, guid: 8d7e6151ac7744348954cac1af474335, type: 3}
+  - {fileID: 8300000, guid: af4bd9ea3544f7142aef431648b23036, type: 3}
+--- !u!114 &1388773206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2777885493155707092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58cb75de0c7373d4f94eb33221d9b617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsBetweenInvasions: 90
+  invasionDuration: 30
+  minTimeBetweenNewShip: 5
+  maxTimeBetweenNewShip: 7.5
+--- !u!82 &2777885491598982038
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2777885493155707092}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e388e99bd1eb3c843b011de4106624a7, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
